@@ -307,6 +307,20 @@ modules:
           version-pattern: libdvdnav-([\w.]+)\.tar\.
           url-template: https://download.videolan.org/pub/videolan/libdvdnav/$version/libdvdnav-$version.tar.xz
 
+  - name: libdvdcss
+    buildsystem: meson
+    cleanup:
+      - /include
+      - /lib/pkgconfig
+    sources:
+      - type: archive
+        url: https://download.videolan.org/pub/libdvdcss/1.5.0/libdvdcss-1.5.0.tar.xz
+        sha256: 529463e4d1befef82e5c6e470db7661a2db0343e092a2fb0d6c037cab8a5c399
+        x-checker-data:
+          type: anitya
+          project-id: 5568
+          url-template: https://download.videolan.org/pub/libdvdcss/$version/libdvdcss-$version.tar.xz
+
   - name: libaacs
     config-opts:
       - --disable-static
